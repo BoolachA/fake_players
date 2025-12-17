@@ -1,6 +1,6 @@
 {
 	"schemaVersion": 1,
-	"id": "shitty-fake-player",
+	"id": "shitty_fake_player",
 	"version": "${version}",
 	"name": "Shitty Fake Player",
 	"description": "Add fake players",
@@ -12,21 +12,18 @@
 		"sources": "https://github.com/"
 	},
 	"license": "CC0-1.0",
-	"icon": "assets/shitty-fake-player/icon.png",
+	"icon": "assets/shitty_fake_player/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
 			"net.shittytapas.fakeplayer.ShittyFakePlayer"
-		],
-		"fabric-datagen": [
-			"net.shittytapas.fakeplayer.ShittyFakePlayerDataGenerator"
 		],
 		"client": [
 			"net.shittytapas.fakeplayer.ShittyFakePlayerClient"
 		]
 	},
 	"mixins": [
-		"shitty-fake-player.mixins.json"
+		"shitty_fake_player.mixins.json"
 	],
 	"depends": {
 		"fabricloader": ">=0.18.3",

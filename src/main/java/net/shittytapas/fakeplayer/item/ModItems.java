@@ -11,11 +11,8 @@ import net.shittytapas.fakeplayer.ShittyFakePlayer;
 
 public class ModItems {
 
-    public static final Identifier FAKE_PLAYER_ID =
-            Identifier.of(ShittyFakePlayer.MOD_ID, "fake_player");
-
-    public static final RegistryKey<Item> FAKE_PLAYER_KEY =
-            RegistryKey.of(Registries.ITEM.getKey(), FAKE_PLAYER_ID);
+    public static final Identifier FAKE_PLAYER_ID = Identifier.of(ShittyFakePlayer.MOD_ID, "fake_player");
+    public static final RegistryKey<Item> FAKE_PLAYER_KEY = RegistryKey.of(Registries.ITEM.getKey(), FAKE_PLAYER_ID);
 
     public static final Item FAKE_PLAYER = Registry.register(
             Registries.ITEM,
@@ -24,9 +21,19 @@ public class ModItems {
     );
 
     public static void registerModItems() {
-        ShittyFakePlayer.LOGGER.info("Registering items for " + ShittyFakePlayer.MOD_ID);
-
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS)
-                .register(entries -> entries.add(FAKE_PLAYER));
+                .register(entries -> {
+                    entries.add(FAKE_PLAYER);
+                    entries.add(TEST_ITEM);
+                });
     }
+    public static final Item TEST_ITEM = Registry.register(
+            Registries.ITEM,
+            Identifier.of(ShittyFakePlayer.MOD_ID, "test_item"),
+            new Item(new Item.Settings().registryKey(
+                    RegistryKey.of(Registries.ITEM.getKey(),
+                            Identifier.of(ShittyFakePlayer.MOD_ID, "test_item"))
+            ))
+    );
+
 }
