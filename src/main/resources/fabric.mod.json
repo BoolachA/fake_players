@@ -1,0 +1,37 @@
+{
+	"schemaVersion": 1,
+	"id": "shitty-fake-player",
+	"version": "${version}",
+	"name": "Shitty Fake Player",
+	"description": "Add fake players",
+	"authors": [
+		"Eduardo Vieira"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/shitty-fake-player/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.shittytapas.fakeplayer.ShittyFakePlayer"
+		],
+		"fabric-datagen": [
+			"net.shittytapas.fakeplayer.ShittyFakePlayerDataGenerator"
+		],
+		"client": [
+			"net.shittytapas.fakeplayer.ShittyFakePlayerClient"
+		]
+	},
+	"mixins": [
+		"shitty-fake-player.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.18.3",
+		"minecraft": "~1.21.10",
+		"java": ">=21",
+		"fabric-api": "*"
+	}
+}
